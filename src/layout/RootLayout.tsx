@@ -1,14 +1,18 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+import Aside from "./Aside";
+import Content from "./Content";
+import Footer from "./Footer";
+import Header from "./Header";
 
 const RootLayout = () => {
 	return (
 		<>
-			<header> Primitive header</header>
-			<article style={{ display: "flex" }}>
-				<aside> TOP 5 films</aside>
+			<Header />
+			<Content>
 				<Outlet />
-			</article>
+			</Content>
+			<Footer />
 		</>
 	);
 };

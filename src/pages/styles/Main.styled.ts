@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const StyledMain = styled.div`
+	width: 100%;
 	background-color: #ccc;
 	text-align: center;
 	padding: 25px;

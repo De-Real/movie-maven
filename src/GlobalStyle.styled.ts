@@ -84,6 +84,10 @@ h6 {
 		color: #171A21;
 		line-height: 1.2;
 	}
+
+	main{
+		min-height: 100vh;
+	}
 `;
 
 export default GlobalStyle;
