@@ -1,9 +1,9 @@
 import React from "react";
-import { StyledTopFilmsList } from "./styles/TopFilmsList.styled";
+import { StyledTopMoviesList } from "./styles/TopFilmsList.styled";
 
-const TopFilmsList = () => {
+const TopMoviesList = () => {
 	return (
-		<StyledTopFilmsList>
+		<StyledTopMoviesList>
 			<h2> The best five </h2>
 			<ul>
 				<li> Film 1 </li>
@@ -12,8 +12,8 @@ const TopFilmsList = () => {
 				<li> Film 4</li>
 				<li>Film 5</li>
 			</ul>
-		</StyledTopFilmsList>
+		</StyledTopMoviesList>
 	);
 };
 
-export default TopFilmsList;
+export default TopMoviesList;

@@ -4,12 +4,14 @@ import DetailedCartoon from "../pages/DetailedCartoon";
 import DetailedFilm from "../pages/DetailedFilm";
 import DetailedSerial from "../pages/DetailedSerial";
 import Films from "../pages/Films";
+import Movies from "../pages/Movies";
 import Serials from "../pages/Serials";
 
 export const moviesRouter = {
 	path: "movies",
 	element: <MoviesLayout />,
 	children: [
+		{ index: true, element: <Movies /> },
 		{
 			path: "films",
 			children: [

@@ -88,6 +88,11 @@ h6 {
 	main{
 		min-height: 100vh;
 	}
+
+	h3{
+		font-size: 36px;
+		margin-bottom: 25px;
+	}
 `;
 
 export default GlobalStyle;

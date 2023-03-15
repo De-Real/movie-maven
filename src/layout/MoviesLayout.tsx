@@ -1,10 +1,11 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+import { MoviesHeader } from "../features/movies";
 
 const MoviesLayout = () => {
 	return (
-		<section>
-			<header> Movies header</header>
+		<section style={{ width: "100%" }}>
+			<MoviesHeader />
 			<Outlet />
 		</section>
 	);
