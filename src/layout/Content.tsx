@@ -1,4 +1,4 @@
-import React, { Children } from "react";
+import React from "react";
 import Aside from "./Aside";
 
 const Content = ({ children }: { children: React.ReactNode }) => {

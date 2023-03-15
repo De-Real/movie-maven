@@ -1,13 +1,41 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { StyledHeader } from "./styles/Header.styled";
+import Button from "../components/ui/Button";
+import { Controls, Logo, StyledHeader } from "./styles/Header.styled";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import IconButton from "../components/ui/IconButton";
 
 const Header = () => {
+	const isLogged = false;
+
 	return (
 		<StyledHeader>
-			<Link to="/"> Logo </Link>
-			<Link to="/preferences"> Preferences </Link>
-			<Link to="/auth?mode=login"> Log in </Link>
+			<Logo>
+				<Link to="/"> MovieMaven </Link>
+			</Logo>
+			{!isLogged && (
+				<Controls>
+					<Link to="/auth?mode=login">
+						<Button variant="outlined"> Log in </Button>
+					</Link>
+					<Link to="/auth?mode=signup">
+						<Button> Sign up </Button>
+					</Link>
+				</Controls>
+			)}
+			{isLogged && (
+				<Controls>
+					<Link to="/preferences">
+						<Button variant="outlined">Preferences</Button>
+					</Link>
+					<Link to="/profile">
+						<IconButton>
+							<AccountCircleIcon />
+							<span>Profile</span>
+						</IconButton>
+					</Link>
+				</Controls>
+			)}
 		</StyledHeader>
 	);
 };
