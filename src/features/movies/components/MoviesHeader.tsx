@@ -1,21 +1,45 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { StyledMoviesHeader } from "./styles/MoviesHeader.styled";
+import {
+	StyledMoviesHeader,
+	StyledNavLink,
+} from "./styles/MoviesHeader.styled";
 
 const MoviesHeader = () => {
 	return (
 		<StyledMoviesHeader>
 			<p>
-				<Link to="/movies">All</Link>
+				<StyledNavLink
+					className={({ isActive }) => (isActive ? "active" : "")}
+					to="/movies"
+					end
+				>
+					All
+				</StyledNavLink>
 			</p>
 			<p>
-				<Link to="/movies/films">Films</Link>
+				<StyledNavLink
+					className={({ isActive }) => (isActive ? "active" : "")}
+					to="/movies/films"
+				>
+					Films
+				</StyledNavLink>
 			</p>
 			<p>
-				<Link to="/movies/serials">Serials</Link>
+				<StyledNavLink
+					className={({ isActive }) => (isActive ? "active" : "")}
+					to="/movies/serials"
+				>
+					Serials
+				</StyledNavLink>
 			</p>
 			<p>
-				<Link to="/movies/cartoons">Cartoons</Link>
+				<StyledNavLink
+					className={({ isActive }) => (isActive ? "active" : "")}
+					to="/movies/cartoons"
+				>
+					Cartoons
+				</StyledNavLink>
 			</p>
 
 			<p>Collections</p>

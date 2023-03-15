@@ -11,7 +11,7 @@ const Header = () => {
 	return (
 		<StyledHeader>
 			<Logo>
-				<Link to="/"> MovieMaven </Link>
+				<Link to="/movies"> MovieMaven </Link>
 			</Logo>
 			{!isLogged && (
 				<Controls>

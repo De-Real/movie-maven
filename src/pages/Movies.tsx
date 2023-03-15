@@ -19,11 +19,11 @@ const DUMMY_MOVIES = [
 
 const Movies = () => {
 	return (
-		<StyledMovies>
+		<>
 			<MoviesSort />
 			<h3> Movies </h3>
 			<MoviesList movies={DUMMY_MOVIES} />
-		</StyledMovies>
+		</>
 	);
 };
 

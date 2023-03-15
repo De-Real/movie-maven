@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import RootLayout from "../layout/RootLayout";
 import Auth from "../pages/Auth";
 import MainPage from "../pages/Main";
@@ -13,7 +13,7 @@ export const router = createBrowserRouter([
 		children: [
 			{
 				index: true,
-				element: <MainPage />,
+				element: <Navigate to="movies" />,
 			},
 			{
 				path: "profile",

@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const StyledMoviesHeader = styled.header`
@@ -9,5 +10,11 @@ export const StyledMoviesHeader = styled.header`
 	font-size: 20px;
 	& a {
 		color: black;
+	}
+`;
+
+export const StyledNavLink = styled(NavLink)`
+	&.active {
+		text-decoration: underline;
 	}
 `;
