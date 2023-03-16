@@ -6,8 +6,8 @@ import { MoviesHeader } from "../features/movies";
 const MoviesLayout = () => {
 	return (
 		<section style={{ width: "100%" }}>
-			<MoviesHeader />
 			<Container>
+				<MoviesHeader />
 				<Outlet />
 			</Container>
 		</section>
