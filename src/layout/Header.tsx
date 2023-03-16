@@ -1,7 +1,11 @@
-import React from "react";
-import { Link } from "react-router-dom";
 import Button from "../components/ui/Button";
-import { Controls, Logo, StyledHeader } from "./styles/Header.styled";
+import {
+	Controls,
+	FilledLink,
+	Logo,
+	StyledHeader,
+	CommonLink,
+} from "./styles/Header.styled";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import IconButton from "../components/ui/IconButton";
 
@@ -11,29 +15,31 @@ const Header = () => {
 	return (
 		<StyledHeader>
 			<Logo>
-				<Link to="/movies"> MovieMaven </Link>
+				<CommonLink to="/movies">
+					Movie<span>MAVEN</span>
+				</CommonLink>
 			</Logo>
 			{!isLogged && (
 				<Controls>
-					<Link to="/auth?mode=login">
+					<CommonLink to="/auth?mode=login">
 						<Button variant="outlined"> Log in </Button>
-					</Link>
-					<Link to="/auth?mode=signup">
+					</CommonLink>
+					<FilledLink to="/auth?mode=signup">
 						<Button> Sign up </Button>
-					</Link>
+					</FilledLink>
 				</Controls>
 			)}
 			{isLogged && (
 				<Controls>
-					<Link to="/preferences">
+					<CommonLink to="/preferences">
 						<Button variant="outlined">Preferences</Button>
-					</Link>
-					<Link to="/profile">
+					</CommonLink>
+					<FilledLink to="/profile">
 						<IconButton>
 							<AccountCircleIcon />
 							<span>Profile</span>
 						</IconButton>
-					</Link>
+					</FilledLink>
 				</Controls>
 			)}
 		</StyledHeader>

@@ -12,7 +12,11 @@ const StyledBtn = styled(Btn)`
 `;
 
 const IconButton = ({ variant = "contained", children }: BtnProps) => {
-	return <StyledBtn variant={variant}>{children}</StyledBtn>;
+	return (
+		<StyledBtn variant={variant} color="inherit">
+			{children}
+		</StyledBtn>
+	);
 };
 
 export default IconButton;

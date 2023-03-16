@@ -1,12 +1,13 @@
 import React from "react";
 import Aside from "./Aside";
+import { MainContent } from "./styles/Content.styled";
 
 const Content = ({ children }: { children: React.ReactNode }) => {
 	return (
-		<main style={{ display: "flex" }}>
+		<MainContent>
 			<Aside />
 			{children}
-		</main>
+		</MainContent>
 	);
 };
 

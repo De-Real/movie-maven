@@ -9,7 +9,13 @@ export const StyledTopMoviesList = styled.div`
 
 	& h2 {
 		font-size: 32px;
-		margin-bottom: 20px;
+		margin-bottom: 10px;
+		font-weight: 700;
+		color: #a50113;
+
+		& span {
+			color: #211d21;
+		}
 	}
 
 	& ul {

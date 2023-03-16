@@ -81,7 +81,7 @@ h6 {
 		min-height: 100vh;
 		width: 100%;
 		background: #FFFFFF;
-		color: #171A21;
+		color: #010A10;
 		line-height: 1.2;
 	}
 
@@ -91,7 +91,6 @@ h6 {
 
 	h3{
 		font-size: 36px;
-		margin-bottom: 25px;
 	}
 `;
 

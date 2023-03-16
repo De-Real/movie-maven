@@ -8,8 +8,14 @@ export const StyledMoviesHeader = styled.header`
 	width: 100%;
 	height: 60px;
 	font-size: 20px;
+	padding: 0 15px;
+	border-radius: 10px;
+	margin-top: 15px;
+
+	background-color: #dfe2db;
+
 	& a {
-		color: black;
+		color: #c10206;
 	}
 `;
 
