@@ -23,6 +23,7 @@ export const StyledTopMoviesList = styled.div`
 		flex-direction: column;
 		gap: 10px;
 		width: 100%;
+		padding: 0 10px;
 	}
 
 	

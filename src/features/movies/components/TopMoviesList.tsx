@@ -5,9 +5,9 @@ import TopMoviesItem from "./TopMoviesItem";
 const DUMMY_MOVIES = [
 	{
 		id: "t1",
-		title: "Heroes right here",
+		title: "Knives out",
 		imgUrl:
-			"https://static1.colliderimages.com/wordpress/wp-content/uploads/2022/12/best-superhero-movies-of-2022-wakanda-forever-the-batman.jpg",
+			"https://upload.wikimedia.org/wikipedia/en/1/1f/Knives_Out_poster.jpeg",
 	},
 	{
 		id: "t2",
