@@ -1,5 +1,5 @@
 import React from "react";
-import MovieItem from "./MovieItem";
+import MoviesItem from "./MoviesItem";
 import Grid from "@mui/material/Grid";
 
 type MoviesListProps = {
@@ -10,7 +10,7 @@ const MoviesList = ({ movies }: MoviesListProps) => {
 	return (
 		<Grid container spacing={2}>
 			{movies.map((movie) => (
-				<MovieItem key={movie.id} title={movie.title} />
+				<MoviesItem key={movie.id} title={movie.title} />
 			))}
 		</Grid>
 	);

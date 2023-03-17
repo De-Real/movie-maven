@@ -25,9 +25,5 @@ export const StyledTopMoviesList = styled.div`
 		width: 100%;
 	}
 
-	& li {
-		height: 150px;
-		border: 1px solid black;
-		border-radius: 5px;
-	}
+	
 `;
