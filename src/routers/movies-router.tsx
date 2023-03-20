@@ -20,7 +20,11 @@ export const moviesRouter = {
 					element: <Films />,
 				},
 				{
-					path: ":filmId",
+					path: ":movieGenre",
+					element: <Films />,
+				},
+				{
+					path: ":movieGenre/details/:movieId",
 					element: <DetailedFilm />,
 				},
 			],
@@ -33,7 +37,11 @@ export const moviesRouter = {
 					element: <Serials />,
 				},
 				{
-					path: ":filmId",
+					path: ":movieGenre",
+					element: <Serials />,
+				},
+				{
+					path: ":movieGenre/details/:movieId",
 					element: <DetailedSerial />,
 				},
 			],
@@ -46,7 +54,11 @@ export const moviesRouter = {
 					element: <Cartoons />,
 				},
 				{
-					path: ":filmId",
+					path: ":movieGenre",
+					element: <Cartoons />,
+				},
+				{
+					path: ":movieGenre/details/:movieId",
 					element: <DetailedCartoon />,
 				},
 			],

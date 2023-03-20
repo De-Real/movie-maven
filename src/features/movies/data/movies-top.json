@@ -1,0 +1,37 @@
+[
+	{
+		"id": "t1",
+		"title": "Knives out",
+		"imgUrl": "https://upload.wikimedia.org/wikipedia/en/1/1f/Knives_Out_poster.jpeg",
+		"type": "films",
+		"genre": "detective"
+	},
+	{
+		"id": "t2",
+		"title": "Knives out: Glass onion",
+		"imgUrl": "https://m.media-amazon.com/images/M/MV5BYmZlZDZkZjYtNzE5Mi00ODFhLTk2OTgtZWVmODBiZTI4NGFiXkEyXkFqcGdeQXVyMTE5MTg5NDIw._V1_.jpg",
+		"type": "films",
+		"genre": "detective"
+	},
+	{
+		"id": "t3",
+		"title": "Rio 2",
+		"imgUrl": "https://m.media-amazon.com/images/M/MV5BMTgzMDczMDYzNl5BMl5BanBnXkFtZTgwMzk2MDIwMTE@._V1_.jpg",
+		"type": "cartoons",
+		"genre": "comedy"
+	},
+	{
+		"id": "t4",
+		"title": "Lupen",
+		"imgUrl": "https://m.media-amazon.com/images/M/MV5BZjEyMmUyYmYtNTAwYi00OWUwLWJlNzEtMDM2N2QxNzIwMTdjXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+		"type": "serials",
+		"genre": "detective"
+	},
+	{
+		"id": "t5",
+		"title": "Founder",
+		"imgUrl": "https://m.media-amazon.com/images/M/MV5BMzExNDg0MDk1M15BMl5BanBnXkFtZTgwNzE1Mjg0MDI@._V1_.jpg",
+		"type": "films",
+		"genre": "drama"
+	}
+]

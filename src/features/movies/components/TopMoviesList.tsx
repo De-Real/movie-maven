@@ -1,39 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { StyledTopMoviesList } from "./styles/TopMoviesList.styled";
 import TopMoviesItem from "./TopMoviesItem";
 
-const DUMMY_MOVIES = [
-	{
-		id: "t1",
-		title: "Knives out",
-		imgUrl:
-			"https://upload.wikimedia.org/wikipedia/en/1/1f/Knives_Out_poster.jpeg",
-	},
-	{
-		id: "t2",
-		title: "No heroes here",
-		imgUrl:
-			"https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/71h4MXEXyDL.jpg",
-	},
-	{
-		id: "t3",
-		title: "Be like them",
-		imgUrl:
-			"https://m.media-amazon.com/images/M/MV5BMTc0Njc1MTU5Nl5BMl5BanBnXkFtZTcwMjA4NDE2MQ@@._V1_.jpg",
-	},
-	{
-		id: "t4",
-		title: "Heroes right here",
-		imgUrl:
-			"https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/71h4MXEXyDL.jpg",
-	},
-	{
-		id: "t5",
-		title: "Heroes right here",
-		imgUrl:
-			"https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/71h4MXEXyDL.jpg",
-	},
-];
+import moviesTop from "../data/movies-top.json";
 
 const TopMoviesList = () => {
 	return (
@@ -42,12 +12,16 @@ const TopMoviesList = () => {
 				The best <span>FIVE</span>
 			</h2>
 			<ul>
-				{DUMMY_MOVIES.map((movie) => (
-					<TopMoviesItem
+				{moviesTop.map((movie) => (
+					<Link
+						to={`movies/${movie.type}/${movie.genre}/details/${movie.id}`}
 						key={movie.id}
-						imgUrl={movie.imgUrl}
-						title={movie.title}
-					/>
+					>
+						<TopMoviesItem
+							imgUrl={movie.imgUrl}
+							title={movie.title}
+						></TopMoviesItem>
+					</Link>
 				))}
 			</ul>
 		</StyledTopMoviesList>
