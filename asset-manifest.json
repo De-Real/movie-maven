@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/movie-maven/static/css/main.a8e3cb25.css",
-    "main.js": "/movie-maven/static/js/main.ba8dbe88.js",
+    "main.js": "/movie-maven/static/js/main.c1f8b4aa.js",
     "index.html": "/movie-maven/index.html",
     "main.a8e3cb25.css.map": "/movie-maven/static/css/main.a8e3cb25.css.map",
-    "main.ba8dbe88.js.map": "/movie-maven/static/js/main.ba8dbe88.js.map"
+    "main.c1f8b4aa.js.map": "/movie-maven/static/js/main.c1f8b4aa.js.map"
   },
   "entrypoints": [
     "static/css/main.a8e3cb25.css",
-    "static/js/main.ba8dbe88.js"
+    "static/js/main.c1f8b4aa.js"
   ]
 }
