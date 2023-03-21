@@ -1,6 +1,5 @@
 import React from "react";
 import Card from "../../../components/ui/Card";
-import { StyledTopMoviesItem } from "./styles/TopMoviesItem.styled";
 
 type TopMoviesItemProps = {
 	title: string;

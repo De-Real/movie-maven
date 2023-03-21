@@ -17,10 +17,7 @@ const TopMoviesList = () => {
 						to={`movies/${movie.type}/${movie.genre}/details/${movie.id}`}
 						key={movie.id}
 					>
-						<TopMoviesItem
-							imgUrl={movie.imgUrl}
-							title={movie.title}
-						></TopMoviesItem>
+						<TopMoviesItem imgUrl={movie.imgUrl} title={movie.title} />
 					</Link>
 				))}
 			</ul>
