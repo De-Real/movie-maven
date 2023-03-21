@@ -1,7 +1,6 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import RootLayout from "../layout/RootLayout";
 import Auth from "../pages/Auth";
-import MainPage from "../pages/Main";
 import Preferences from "../pages/Preferences";
 import Profile from "../pages/Profile";
 import { moviesRouter } from "./movies-router";

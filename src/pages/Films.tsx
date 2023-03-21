@@ -1,5 +1,5 @@
 import React from "react";
-import { MoviesList, MoviesSort } from "../features/movies";
+import MoviesWrapper from "../components/ui/MoviesWrapper";
 
 const DUMMY_MOVIES = [
 	{
@@ -77,13 +77,9 @@ const DUMMY_MOVIES = [
 ];
 
 const Films = () => {
-	return (
-		<>
-			<MoviesSort type="films" />
-			<h3>Films</h3>
-			<MoviesList movies={DUMMY_MOVIES} />
-		</>
-	);
+	return <MoviesWrapper type="films" title="Films" movies={DUMMY_MOVIES} />;
 };
+
+//Should fetch all genres films or particular films, this two tasks is the job of this page component
 
 export default Films;

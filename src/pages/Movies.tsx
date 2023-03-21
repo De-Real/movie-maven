@@ -1,6 +1,5 @@
 import React from "react";
-import { MoviesList, MoviesSort } from "../features/movies";
-import { StyledMovies } from "./styles/Movies.styled";
+import MoviesWrapper from "../components/ui/MoviesWrapper";
 
 const DUMMY_MOVIES = [
 	{
@@ -78,13 +77,9 @@ const DUMMY_MOVIES = [
 ];
 
 const Movies = () => {
-	return (
-		<>
-			<MoviesSort />
-			<h3> Movies </h3>
-			<MoviesList movies={DUMMY_MOVIES} />
-		</>
-	);
+	return <MoviesWrapper title="Movies" movies={DUMMY_MOVIES} type="movies" />;
 };
+
+//Should fetch movies by using route /movies/1 where 1 is page
 
 export default Movies;

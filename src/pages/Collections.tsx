@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 
 const Collections = () => {
-  return (
-	 <div>Collections</div>
-  )
-}
+	return <div>Collections</div>;
+};
 
-export default Collections
+//Should fetch and display movies collections
+
+export default Collections;

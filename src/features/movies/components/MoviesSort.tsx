@@ -3,10 +3,14 @@ import { StyledMoviesSort } from "./styles/MoviesSort.styled";
 import filmsGenres from "../data/films-genres.json";
 import { NavLink } from "react-router-dom";
 
-const MoviesSort = ({ type }: { type?: string }) => {
+const MoviesSort = ({
+	type,
+}: {
+	type: "films" | "series" | "cartoons" | "movies";
+}) => {
 	return (
 		<StyledMoviesSort>
-			{type && (
+			{type !== "movies" && (
 				<div>
 					{filmsGenres.map((genre) => (
 						<NavLink
@@ -20,7 +24,7 @@ const MoviesSort = ({ type }: { type?: string }) => {
 				</div>
 			)}
 			<p>Sort by: popularity, release date, your preferences </p>
-			{!type && <p>Show: all films serials cartoons</p>}
+			{type === "movies" && <p>Show: all films serials cartoons</p>}
 		</StyledMoviesSort>
 	);
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import { MoviesList, MoviesSort } from "../features/movies";
+import MoviesWrapper from "../components/ui/MoviesWrapper";
 
 const DUMMY_MOVIES = [
 	{
@@ -78,11 +78,7 @@ const DUMMY_MOVIES = [
 
 const Cartoons = () => {
 	return (
-		<>
-			<MoviesSort type="cartoons" />
-			<h3>Cartoons</h3>
-			<MoviesList movies={DUMMY_MOVIES} />
-		</>
+		<MoviesWrapper type="cartoons" title="Cartoons" movies={DUMMY_MOVIES} />
 	);
 };
 
