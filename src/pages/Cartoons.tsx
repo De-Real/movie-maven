@@ -1,5 +1,5 @@
 import React from "react";
-import { MoviesList } from "../features/movies";
+import { MoviesList, MoviesSort } from "../features/movies";
 
 const DUMMY_MOVIES = [
 	{
@@ -79,7 +79,7 @@ const DUMMY_MOVIES = [
 const Cartoons = () => {
 	return (
 		<>
-			<p> Here we should render genres of cartoons</p>
+			<MoviesSort type="cartoons" />
 			<h3>Cartoons</h3>
 			<MoviesList movies={DUMMY_MOVIES} />
 		</>

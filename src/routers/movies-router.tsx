@@ -1,10 +1,12 @@
 import MoviesLayout from "../layout/MoviesLayout";
 import Cartoons from "../pages/Cartoons";
+import Collections from "../pages/Collections";
 import DetailedCartoon from "../pages/DetailedCartoon";
 import DetailedFilm from "../pages/DetailedFilm";
 import DetailedSerial from "../pages/DetailedSerial";
 import Films from "../pages/Films";
 import Movies from "../pages/Movies";
+import New from "../pages/New";
 import Serials from "../pages/Serials";
 
 export const moviesRouter = {
@@ -12,6 +14,8 @@ export const moviesRouter = {
 	element: <MoviesLayout />,
 	children: [
 		{ index: true, element: <Movies /> },
+		{ path: "new", element: <New /> },
+		{ path: "collections", element: <Collections /> },
 		{
 			path: "films",
 			children: [

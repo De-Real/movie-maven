@@ -41,9 +41,18 @@ const MoviesHeader = () => {
 				</StyledNavLink>
 			</MoviesGenreLinks>
 			<MoviesCollections>
-				{/* {Should be done as a new pages?} */}
-				<p>Collections</p>
-				<p>New</p>
+				<StyledNavLink
+					className={({ isActive }) => (isActive ? "active" : "")}
+					to="/movies/collections"
+				>
+					Collections
+				</StyledNavLink>
+				<StyledNavLink
+					className={({ isActive }) => (isActive ? "active" : "")}
+					to="/movies/new"
+				>
+					New
+				</StyledNavLink>
 			</MoviesCollections>
 			<SearchInput placeholder="Enter movie name" />
 		</StyledMoviesHeader>
