@@ -5,6 +5,7 @@ type MoviesWrapperProps = {
 		id: string;
 		title: string;
 		imgUrl: string;
+		type: "films" | "series" | "cartoons";
 	}[];
 	title: string;
 	type: "films" | "series" | "cartoons" | "movies";

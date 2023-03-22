@@ -4,6 +4,7 @@ import { StyledTopMoviesList } from "./styles/TopMoviesList.styled";
 import TopMoviesItem from "./TopMoviesItem";
 
 import moviesTop from "../data/movies-top.json";
+import { createMovieLink } from "../utils/createMovieLink";
 
 const TopMoviesList = () => {
 	return (
@@ -14,10 +15,14 @@ const TopMoviesList = () => {
 			<ul>
 				{moviesTop.map((movie) => (
 					<Link
-						to={`movies/${movie.type}/${movie.genre}/details/${movie.id}`}
+						to={createMovieLink(movie.type, movie.genre, movie.id)}
 						key={movie.id}
 					>
-						<TopMoviesItem imgUrl={movie.imgUrl} title={movie.title} />
+						<TopMoviesItem
+							imgUrl={movie.imgUrl}
+							title={movie.title}
+							type={movie.type as "films" | "series" | "cartoons"}
+						/>
 					</Link>
 				))}
 			</ul>

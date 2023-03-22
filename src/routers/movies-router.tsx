@@ -3,11 +3,11 @@ import Cartoons from "../pages/Cartoons";
 import Collections from "../pages/Collections";
 import DetailedCartoon from "../pages/DetailedCartoon";
 import DetailedFilm from "../pages/DetailedFilm";
-import DetailedSerial from "../pages/DetailedSerial";
+import DetailedSeries from "../pages/DetailedSeries";
 import Films from "../pages/Films";
 import Movies from "../pages/Movies";
 import New from "../pages/New";
-import Serials from "../pages/Serials";
+import Series from "../pages/Series";
 
 export const moviesRouter = {
 	path: "movies",
@@ -34,19 +34,19 @@ export const moviesRouter = {
 			],
 		},
 		{
-			path: "serials",
+			path: "series",
 			children: [
 				{
 					index: true,
-					element: <Serials />,
+					element: <Series />,
 				},
 				{
 					path: ":movieGenre",
-					element: <Serials />,
+					element: <Series />,
 				},
 				{
 					path: ":movieGenre/details/:movieId",
-					element: <DetailedSerial />,
+					element: <DetailedSeries />,
 				},
 			],
 		},
