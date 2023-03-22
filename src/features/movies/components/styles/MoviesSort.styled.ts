@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
-export const StyledMoviesSort = styled.div`
+export const StyledMoviesSort = styled.div<{ isMoviesType: boolean }>`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	min-height: 60px;
+	gap: 25px;
 	padding: 10px 15px;
 	border-radius: 10px;
 	margin-top: 15px;
@@ -19,8 +20,8 @@ export const StyledMoviesSort = styled.div`
 		text-decoration: underline;
 	}
 
-	& div {
-		width: 700px;
+	& div.genres {
+		flex: 1 1 auto;
 		display: flex;
 		flex-wrap: wrap;
 	}

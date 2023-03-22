@@ -3,6 +3,8 @@ import { StyledMoviesSort } from "./styles/MoviesSort.styled";
 import filmsGenres from "../data/films-genres.json";
 import { NavLink } from "react-router-dom";
 import { switchGenres } from "../utils/switchGenres";
+import SortSelection from "../../../components/form/SortSelection";
+import LinearCheckbox from "../../../components/form/LinearCheckbox";
 
 const MoviesSort = ({
 	type,
@@ -12,9 +14,9 @@ const MoviesSort = ({
 	const genres = switchGenres(type);
 
 	return (
-		<StyledMoviesSort>
+		<StyledMoviesSort isMoviesType={type === "movies" ? true : false}>
 			{type !== "movies" && (
-				<div>
+				<div className="genres">
 					{genres.map((genre) => (
 						<NavLink
 							className={({ isActive }) => (isActive ? "active" : "")}
@@ -26,8 +28,8 @@ const MoviesSort = ({
 					))}
 				</div>
 			)}
-			<p>Sort by: popularity, release date, your preferences </p>
-			{type === "movies" && <p>Show: all films serials cartoons</p>}
+			<SortSelection />
+			{type === "movies" && <LinearCheckbox />}
 		</StyledMoviesSort>
 	);
 };
