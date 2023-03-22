@@ -2,17 +2,20 @@ import React from "react";
 import { StyledMoviesSort } from "./styles/MoviesSort.styled";
 import filmsGenres from "../data/films-genres.json";
 import { NavLink } from "react-router-dom";
+import { switchGenres } from "../utils/switchGenres";
 
 const MoviesSort = ({
 	type,
 }: {
 	type: "films" | "series" | "cartoons" | "movies";
 }) => {
+	const genres = switchGenres(type);
+
 	return (
 		<StyledMoviesSort>
 			{type !== "movies" && (
 				<div>
-					{filmsGenres.map((genre) => (
+					{genres.map((genre) => (
 						<NavLink
 							className={({ isActive }) => (isActive ? "active" : "")}
 							to={`/movies/${type}/${genre.toLowerCase()}`}

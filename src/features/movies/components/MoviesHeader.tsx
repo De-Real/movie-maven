@@ -28,9 +28,9 @@ const MoviesHeader = () => {
 
 				<StyledNavLink
 					className={({ isActive }) => (isActive ? "active" : "")}
-					to="/movies/serials"
+					to="/movies/series"
 				>
-					Serials
+					Series
 				</StyledNavLink>
 
 				<StyledNavLink
