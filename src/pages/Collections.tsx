@@ -1,7 +1,8 @@
 import React from "react";
+import { MoviesCollections } from "../features/movies";
 
 const Collections = () => {
-	return <div>Collections</div>;
+	return <MoviesCollections />;
 };
 
 //Should fetch and display movies collections

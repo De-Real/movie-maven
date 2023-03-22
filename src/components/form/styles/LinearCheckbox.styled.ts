@@ -5,6 +5,10 @@ export const StyledLinearCheckbox = styled.div`
 	gap: 10px;
 	padding: 20px 25px 0 25px;
 
+	label {
+		cursor: pointer;
+	}
+
 	input[type="checkbox"] {
 		display: none;
 	}
