@@ -35,5 +35,5 @@ export const MoviesCollections = styled.div`
 	gap: 25px;
 	padding: 5px 25px;
 	border-radius: 5px;
-	border: 1px solid black;
+	border: 1px solid rgba(33, 29, 33, 0.225);
 `;

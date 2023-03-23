@@ -13,25 +13,19 @@ const SortSelection = () => {
 	};
 
 	return (
-		<StyledSortSelection>
-			<FormControl variant="standard" sx={{ width: "100%" }} color="error">
-				<InputLabel id="demo-simple-select-standard-label">Sort by</InputLabel>
-				<Select
-					labelId="demo-simple-select-standard-label"
-					id="demo-simple-select-standard"
-					value={age}
-					onChange={handleChange}
-					label="Age"
-				>
-					<MenuItem value="">
-						<em>None</em>
-					</MenuItem>
-					<MenuItem value="preferences">Preferences</MenuItem>
-					<MenuItem value="release-date">Release date</MenuItem>
-					<MenuItem value="rating">Rating</MenuItem>
-				</Select>
-			</FormControl>
-		</StyledSortSelection>
+		<>
+			<StyledSortSelection>
+				<p>Sort by: </p>
+
+				<div>
+					<select>
+						<option value="preferences">Preferences</option>
+						<option value="release-date">Release date</option>
+						<option value="rating">Rating</option>
+					</select>
+				</div>
+			</StyledSortSelection>
+		</>
 	);
 };
 
