@@ -1,5 +1,9 @@
 import React from "react";
-import MoviesWrapper from "../components/ui/MoviesWrapper";
+import { Link } from "react-router-dom";
+import IconButton from "../components/ui/IconButton";
+import UndoIcon from "@mui/icons-material/Undo";
+import { MoviesList } from "../features/movies";
+import CollectionsWrapper from "../components/ui/CollectionsWrapper";
 
 const DUMMY_MOVIES = [
 	{
@@ -51,10 +55,28 @@ const DUMMY_MOVIES = [
 	imgUrl: string;
 }[];
 
-const Movies = () => {
-	return <MoviesWrapper title="Movies" movies={DUMMY_MOVIES} type="movies" />;
+const DetailedCollection = () => {
+	return (
+		<CollectionsWrapper
+			title="Collection name"
+			description="Collection description Lorem ipsum dolor sit amet consectetur
+		adipisicing elit. Temporibus repellendus facere recusandae, totam
+		dolorem eius eligendi omnis magni sequi labore, maiores assumenda
+		incidunt soluta, nisi libero magnam harum amet velit?"
+			movies={DUMMY_MOVIES}
+		>
+			<Link
+				style={{
+					color: "#A50113",
+				}}
+				to=".."
+			>
+				<IconButton>
+					<UndoIcon /> <span>Back to collections</span>
+				</IconButton>
+			</Link>
+		</CollectionsWrapper>
+	);
 };
 
-//Should fetch movies by using route /movies/1 where 1 is page
-
-export default Movies;
+export default DetailedCollection;
