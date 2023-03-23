@@ -4,6 +4,7 @@ import Collections from "../pages/Collections";
 import DetailedCartoon from "../pages/DetailedCartoon";
 import DetailedCollection from "../pages/DetailedCollection";
 import DetailedFilm from "../pages/DetailedFilm";
+import DetailedMovie from "../pages/DetailedMovie";
 import DetailedSeries from "../pages/DetailedSeries";
 import Films from "../pages/Films";
 import Movies from "../pages/Movies";
@@ -39,7 +40,7 @@ export const moviesRouter = {
 				},
 				{
 					path: ":movieGenre/details/:movieId",
-					element: <DetailedFilm />,
+					element: <DetailedMovie />,
 				},
 			],
 		},
@@ -56,7 +57,7 @@ export const moviesRouter = {
 				},
 				{
 					path: ":movieGenre/details/:movieId",
-					element: <DetailedSeries />,
+					element: <DetailedMovie />,
 				},
 			],
 		},
@@ -73,7 +74,7 @@ export const moviesRouter = {
 				},
 				{
 					path: ":movieGenre/details/:movieId",
-					element: <DetailedCartoon />,
+					element: <DetailedMovie />,
 				},
 			],
 		},
