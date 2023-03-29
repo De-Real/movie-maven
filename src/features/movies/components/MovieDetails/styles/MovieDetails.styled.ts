@@ -22,24 +22,3 @@ export const MovieDetailsBlock = styled.div`
 	}
 `;
 
-export const MovieDetail = styled.p`
-	padding: 5px 0;
-	& :first-child {
-		font-weight: 700;
-	}
-`;
-
-export const MoviePhoto = styled.div`
-	width: 220px;
-
-	& img {
-		width: 100%;
-		height: auto;
-	}
-`;
-
-export const MovieRatings = styled.div`
-	& span {
-		font-weight: 700;
-	}
-`;

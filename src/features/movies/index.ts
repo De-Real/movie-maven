@@ -8,4 +8,4 @@ export { default as MoviesList } from "./components/MoviesList";
 
 export { default as MoviesCollections } from "./components//MoviesCollections";
 
-export { default as MovieDetails } from "./components/MovieDetails";
+export { default as MovieDetails } from "./components/MovieDetails/MovieDetails";
