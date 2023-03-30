@@ -6,7 +6,7 @@ import ForumIcon from "@mui/icons-material/Forum";
 import Checkbox from "@mui/material/Checkbox";
 import IconButton from "../ui/IconButton";
 
-const CommentForm = () => {
+const CommentForm = ({ answer = false }: { answer?: boolean }) => {
 	const [textareaValue, setTextareaValue] = useState("");
 	const [checked, setChecked] = React.useState(true);
 
@@ -20,7 +20,7 @@ const CommentForm = () => {
 	};
 
 	return (
-		<StyledCommentForm>
+		<StyledCommentForm isAnswer={answer}>
 			<textarea value={textareaValue} onChange={changeTextareaValue} />
 			<p>Characters: {textareaValue.length}/300</p>
 			<div>
@@ -35,9 +35,10 @@ const CommentForm = () => {
 			</div>
 
 			<StyledButton>
+				{answer && <Button>Cancel</Button>}
 				<IconButton>
 					<ForumIcon />
-					<span>Add comment</span>
+					<span>{answer ? "Response" : "Add comment"}</span>
 				</IconButton>
 			</StyledButton>
 		</StyledCommentForm>

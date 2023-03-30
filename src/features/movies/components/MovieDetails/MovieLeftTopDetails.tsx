@@ -27,12 +27,13 @@ const MovieLeftTopDetails = () => {
 					<Rating
 						name="half-rating-read"
 						precision={0.1}
+						size="large"
 						value={value}
 						onChange={(_event, newValue) => {
 							setValue(newValue || 0);
 						}}
 					/>
-					{value > 0 && <span>{value.toFixed(1)}</span>}
+					{value > 0 && <span className="value">{value.toFixed(1)}</span>}
 				</div>
 				<StyledMovieRatingFeedback>
 					{value ? "Thanks for you feedback!" : ""}

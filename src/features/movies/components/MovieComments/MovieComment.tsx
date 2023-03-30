@@ -12,53 +12,67 @@ import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 import ReportProblemIcon from "@mui/icons-material/ReportProblem";
 import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
+import CommentForm from "../../../../components/form/CommentForm";
 
-const MovieComment = ({
-	comment,
-}: {
-	comment: {
-		commentId: number;
-		userId: number;
-		userName: string;
-		commentText: string;
-		userRating: number;
-		date: Date;
-	};
-}) => {
+type commentType = {
+	commentId: string;
+	userId: string;
+	userName: string;
+	commentText: string;
+	userRating: number;
+	date: Date;
+};
+
+type MovieCommentProps = {
+	comment: commentType;
+	answer?: boolean;
+};
+
+const MovieComment = ({ comment, answer = false }: MovieCommentProps) => {
 	const [liked, setLiked] = useState(false);
+	const [isResponsing, setIsResponsing] = useState(false);
 
 	return (
-		<StyledMovieComment>
-			<MovieCommentHeader>
-				<p>{comment.userName}</p>
-				<p>{comment.date.toLocaleDateString()}</p>
-				<Rating
-					defaultValue={comment.userRating}
-					size="small"
-					precision={0.1}
-					readOnly
-				/>
-			</MovieCommentHeader>
-			<MovieCommentText>{comment.commentText}</MovieCommentText>
-			<MovieCommentControl>
-				<button
-					onClick={() => {
-						setLiked((s) => !s);
-					}}
-				>
-					{liked ? <ThumbUpAltIcon /> : <ThumbUpOffAltIcon />}
-					<span> Agree (5)</span>
-				</button>
+		<>
+			<StyledMovieComment isAnswer={answer}>
+				<MovieCommentHeader>
+					<p>{comment.userName}</p>
+					<p>{comment.date.toLocaleDateString()}</p>
+					<Rating
+						defaultValue={comment.userRating}
+						size="small"
+						precision={0.1}
+						readOnly
+					/>
+				</MovieCommentHeader>
+				<MovieCommentText>{comment.commentText}</MovieCommentText>
+				<MovieCommentControl>
+					<button
+						onClick={() => {
+							setLiked((s) => !s);
+						}}
+					>
+						{liked ? <ThumbUpAltIcon /> : <ThumbUpOffAltIcon />}
+						<span> Agree (5)</span>
+					</button>
 
-				<button>
-					<KeyboardReturnIcon />
-					<span>Response</span>
-				</button>
-			</MovieCommentControl>
-			<MovieCommentReport>
-				<ReportProblemIcon />
-			</MovieCommentReport>
-		</StyledMovieComment>
+					{!answer && (
+						<button
+							onClick={() => {
+								setIsResponsing((s) => !s);
+							}}
+						>
+							<KeyboardReturnIcon />
+							<span>Response</span>
+						</button>
+					)}
+				</MovieCommentControl>
+				<MovieCommentReport>
+					<ReportProblemIcon />
+				</MovieCommentReport>
+			</StyledMovieComment>
+			{isResponsing && <CommentForm />}
+		</>
 	);
 };
 

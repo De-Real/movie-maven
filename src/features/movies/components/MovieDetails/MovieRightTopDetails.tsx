@@ -31,7 +31,9 @@ const MovieRightTopDetails = () => {
 			</MovieDetail>
 			<MovieDetail>
 				<span>Genre: </span>
-				<span>Drama, Detective, Travel</span>
+				<Link to="/movies/films/drama">Drama</Link>,
+				<Link to="/movies/films/detectives"> Detectives</Link>,
+				<Link to="/movies/films/foreigh">Foreigh</Link>
 			</MovieDetail>
 
 			<MovieDetail>

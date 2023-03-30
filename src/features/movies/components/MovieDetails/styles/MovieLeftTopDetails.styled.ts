@@ -27,6 +27,10 @@ export const StyledMovieRating = styled.div`
 		align-items: center;
 		font-weight: 600;
 	}
+
+	& span.value {
+		font-size: 18px;
+	}
 `;
 
 export const StyledMovieRatingFeedback = styled.p`

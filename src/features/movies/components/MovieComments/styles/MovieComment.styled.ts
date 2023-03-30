@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
-export const StyledMovieComment = styled.li`
-	background-color: #dfe2db;
-	border: 1px solid #211d21;
+export const StyledMovieComment = styled.div<{ isAnswer: boolean }>`
+	background-color: rgba(223, 226, 219, 0.2);
+	border: 1px solid rgba(223, 226, 219, 0.4);
 	border-radius: 5px;
 	padding: 10px;
-	max-width: 700px;
+	/* max-width: ${({ isAnswer }) => (isAnswer ? "650px" : "700px")}; */
+	max-width: 100%;
 	position: relative;
+	/* margin-left: ${({ isAnswer }) => (isAnswer ? "50px" : "0px")}; */
 
 	box-shadow: 2px 2px 5px #ccc;
 	& button {
@@ -31,7 +33,7 @@ export const MovieCommentControl = styled.div`
 	display: flex;
 	align-items: center;
 	gap: 25px;
-	padding: 0 60px;
+	padding: 0 5px;
 	& button {
 		display: flex;
 		align-items: center;
