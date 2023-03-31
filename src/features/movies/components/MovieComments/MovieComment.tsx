@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {
+	MovieCommentButton,
 	MovieCommentControl,
 	MovieCommentHeader,
 	MovieCommentReport,
@@ -13,6 +14,7 @@ import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 import ReportProblemIcon from "@mui/icons-material/ReportProblem";
 import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
 import CommentForm from "../../../../components/form/CommentForm";
+import FadeTooltip from "../../../../components/ui/FadeTooltip";
 
 type commentType = {
 	commentId: string;
@@ -47,29 +49,34 @@ const MovieComment = ({ comment, answer = false }: MovieCommentProps) => {
 				</MovieCommentHeader>
 				<MovieCommentText>{comment.commentText}</MovieCommentText>
 				<MovieCommentControl>
-					<button
-						onClick={() => {
-							setLiked((s) => !s);
-						}}
-					>
-						{liked ? <ThumbUpAltIcon /> : <ThumbUpOffAltIcon />}
-						<span> Agree (5)</span>
-					</button>
-
-					{!answer && (
-						<button
+					<FadeTooltip title="Agree with this comment">
+						<MovieCommentButton
 							onClick={() => {
-								setIsResponsing((s) => !s);
+								setLiked((s) => !s);
 							}}
 						>
-							<KeyboardReturnIcon />
-							<span>Response</span>
-						</button>
+							{liked ? <ThumbUpAltIcon /> : <ThumbUpOffAltIcon />}
+							<span> Agree (5)</span>
+						</MovieCommentButton>
+					</FadeTooltip>
+					{!answer && (
+						<FadeTooltip title="Response to this comment">
+							<MovieCommentButton
+								onClick={() => {
+									setIsResponsing((s) => !s);
+								}}
+							>
+								<KeyboardReturnIcon />
+								<span>Response</span>
+							</MovieCommentButton>
+						</FadeTooltip>
 					)}
 				</MovieCommentControl>
-				<MovieCommentReport>
-					<ReportProblemIcon />
-				</MovieCommentReport>
+				<FadeTooltip title="Report about problem">
+					<MovieCommentReport>
+						<ReportProblemIcon />
+					</MovieCommentReport>
+				</FadeTooltip>
 			</StyledMovieComment>
 			{isResponsing && <CommentForm />}
 		</>

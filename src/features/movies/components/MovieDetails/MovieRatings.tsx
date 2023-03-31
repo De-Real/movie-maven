@@ -5,21 +5,15 @@ import {
 
 import Rating from "@mui/material/Rating";
 
-import Tooltip from "@mui/material/Tooltip";
-import Fade from "@mui/material/Fade";
-
 import PersonIcon from "@mui/icons-material/Person";
 import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
+import FadeTooltip from "../../../../components/ui/FadeTooltip";
 
 const MovieRatings = () => {
 	return (
 		<StyledMovieRatings>
 			<span>Ratings: </span>
-			<Tooltip
-				title="Rating by administrators"
-				TransitionComponent={Fade}
-				TransitionProps={{ timeout: 600 }}
-			>
+			<FadeTooltip title="Rating by administrators">
 				<StyledMovieRatingItem>
 					<AdminPanelSettingsIcon />
 					<Rating
@@ -30,13 +24,9 @@ const MovieRatings = () => {
 					/>
 					<span>{(4.34).toFixed(2)}</span>
 				</StyledMovieRatingItem>
-			</Tooltip>
+			</FadeTooltip>
 
-			<Tooltip
-				title="Rating by users"
-				TransitionComponent={Fade}
-				TransitionProps={{ timeout: 600 }}
-			>
+			<FadeTooltip title="Rating by users">
 				<StyledMovieRatingItem>
 					<PersonIcon />
 					<Rating
@@ -47,7 +37,7 @@ const MovieRatings = () => {
 					/>
 					<span>{(4.6).toFixed(2)}</span>
 				</StyledMovieRatingItem>
-			</Tooltip>
+			</FadeTooltip>
 		</StyledMovieRatings>
 	);
 };

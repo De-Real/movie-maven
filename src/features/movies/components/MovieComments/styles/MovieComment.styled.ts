@@ -34,13 +34,14 @@ export const MovieCommentControl = styled.div`
 	align-items: center;
 	gap: 25px;
 	padding: 0 5px;
-	& button {
-		display: flex;
-		align-items: center;
+`;
 
-		padding: 5px;
-		gap: 5px;
-	}
+export const MovieCommentButton = styled.button`
+	display: flex;
+	align-items: center;
+
+	padding: 5px;
+	gap: 5px;
 `;
 
 export const MovieCommentReport = styled.button`
