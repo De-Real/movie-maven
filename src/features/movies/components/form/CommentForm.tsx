@@ -1,14 +1,41 @@
 import React, { useState } from "react";
-import Button from "../ui/Button";
+import Button from "../../../../components/ui/Button";
 import { StyledButton, StyledCommentForm } from "./styles/CommentForm.styled";
 
 import ForumIcon from "@mui/icons-material/Forum";
 import Checkbox from "@mui/material/Checkbox";
-import IconButton from "../ui/IconButton";
+import IconButton from "../../../../components/ui/IconButton";
 
-const CommentForm = ({ answer = false }: { answer?: boolean }) => {
+import { CommentResponseBody } from "../../types/comments";
+
+type CommentFormProps = {
+	answer?: boolean;
+	onManageResponse?: () => void;
+	onSubmitResponse: (body: CommentResponseBody) => void;
+};
+
+const CommentForm = ({
+	answer = false,
+	onManageResponse,
+	onSubmitResponse,
+}: CommentFormProps) => {
 	const [textareaValue, setTextareaValue] = useState("");
 	const [checked, setChecked] = React.useState(true);
+
+	const cancelResponseHandler = () => {
+		if (onManageResponse) {
+			onManageResponse();
+		}
+	};
+
+	const submitResponse = () => {
+		setTextareaValue("");
+
+		onSubmitResponse({
+			commentText: textareaValue,
+			anonymous: checked,
+		});
+	};
 
 	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		setChecked(event.target.checked);
@@ -35,8 +62,8 @@ const CommentForm = ({ answer = false }: { answer?: boolean }) => {
 			</div>
 
 			<StyledButton>
-				{answer && <Button>Cancel</Button>}
-				<IconButton>
+				{answer && <Button onClick={cancelResponseHandler}>Cancel</Button>}
+				<IconButton onClick={submitResponse}>
 					<ForumIcon />
 					<span>{answer ? "Response" : "Add comment"}</span>
 				</IconButton>

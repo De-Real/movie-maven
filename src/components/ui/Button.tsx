@@ -1,3 +1,4 @@
+import React from "react";
 import { default as Btn } from "@mui/material/Button";
 
 type BtnProps = {
@@ -5,9 +6,13 @@ type BtnProps = {
 	children: string;
 };
 
-const Button = ({ variant = "contained", children }: BtnProps) => {
+const Button = ({
+	variant = "contained",
+	children,
+	onClick,
+}: BtnProps & React.ComponentPropsWithRef<"button">) => {
 	return (
-		<Btn variant={variant} color="inherit">
+		<Btn onClick={onClick} variant={variant} color="inherit">
 			{children}
 		</Btn>
 	);

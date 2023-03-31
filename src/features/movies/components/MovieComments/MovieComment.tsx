@@ -13,33 +13,36 @@ import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 import ReportProblemIcon from "@mui/icons-material/ReportProblem";
 import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
-import CommentForm from "../../../../components/form/CommentForm";
 import FadeTooltip from "../../../../components/ui/FadeTooltip";
 
-type commentType = {
-	commentId: string;
-	userId: string;
-	userName: string;
-	commentText: string;
-	userRating: number;
-	date: Date;
-};
+import { CommentBody } from "../../../../types/comments";
 
 type MovieCommentProps = {
-	comment: commentType;
+	comment: CommentBody;
 	answer?: boolean;
+	onResponseSubmit?: () => void;
+	onManageResponse?: () => void;
 };
 
-const MovieComment = ({ comment, answer = false }: MovieCommentProps) => {
+const MovieComment = ({
+	comment,
+	answer = false,
+	onManageResponse,
+}: MovieCommentProps) => {
 	const [liked, setLiked] = useState(false);
-	const [isResponsing, setIsResponsing] = useState(false);
+
+	const manageResponsingHandler = () => {
+		if (onManageResponse) {
+			onManageResponse();
+		}
+	};
 
 	return (
 		<>
 			<StyledMovieComment isAnswer={answer}>
 				<MovieCommentHeader>
 					<p>{comment.userName}</p>
-					<p>{comment.date.toLocaleDateString()}</p>
+					<p>{comment.date}</p>
 					<Rating
 						defaultValue={comment.userRating}
 						size="small"
@@ -61,11 +64,7 @@ const MovieComment = ({ comment, answer = false }: MovieCommentProps) => {
 					</FadeTooltip>
 					{!answer && (
 						<FadeTooltip title="Response to this comment">
-							<MovieCommentButton
-								onClick={() => {
-									setIsResponsing((s) => !s);
-								}}
-							>
+							<MovieCommentButton onClick={manageResponsingHandler}>
 								<KeyboardReturnIcon />
 								<span>Response</span>
 							</MovieCommentButton>
@@ -78,7 +77,7 @@ const MovieComment = ({ comment, answer = false }: MovieCommentProps) => {
 					</MovieCommentReport>
 				</FadeTooltip>
 			</StyledMovieComment>
-			{isResponsing && <CommentForm />}
+			{/* {isResponsing && <CommentForm />} */}
 		</>
 	);
 };

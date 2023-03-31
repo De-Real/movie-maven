@@ -8,7 +8,18 @@ import MovieRightTopDetails from "./MovieRightTopDetails";
 import MovieComments from "../MovieComments/MovieComments";
 import MovieAddComment from "../MovieComments/MovieAddComment";
 
+import { DUMMY_COMMENTS } from "../../data/dummy-comments";
+import { useEffect } from "react";
+import { useAppDispatch } from "../../../../store/hooks";
+import { setComments } from "../../../../store/comments-slice";
+
 const MovieDetails = () => {
+	const dispatch = useAppDispatch();
+
+	useEffect(() => {
+		dispatch(setComments(DUMMY_COMMENTS));
+	});
+
 	return (
 		<div>
 			<h3> Movie name </h3>

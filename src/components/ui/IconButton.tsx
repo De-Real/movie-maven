@@ -11,9 +11,13 @@ const StyledBtn = styled(Btn)`
 	gap: 10px;
 `;
 
-const IconButton = ({ variant = "contained", children }: BtnProps) => {
+const IconButton = ({
+	variant = "contained",
+	children,
+	onClick,
+}: BtnProps & React.ComponentPropsWithRef<"button">) => {
 	return (
-		<StyledBtn variant={variant} color="inherit">
+		<StyledBtn onClick={onClick} variant={variant} color="inherit">
 			{children}
 		</StyledBtn>
 	);
