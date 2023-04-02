@@ -11,9 +11,11 @@ type MoviesListProps = {
 		imgUrl: string;
 		type: "films" | "series" | "cartoons";
 	}[];
+
+	type?: "default" | "short";
 };
 
-const MoviesList = ({ movies }: MoviesListProps) => {
+const MoviesList = ({ movies, type = "default" }: MoviesListProps) => {
 	return (
 		<Grid container spacing={2}>
 			{movies.map((movie) => (
@@ -23,6 +25,7 @@ const MoviesList = ({ movies }: MoviesListProps) => {
 					imgUrl={movie.imgUrl}
 					type={movie.type}
 					id={movie.id}
+					showType={type}
 				/>
 			))}
 		</Grid>

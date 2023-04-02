@@ -10,9 +10,12 @@ type MovieItemProps = {
 	title: string;
 	imgUrl: string;
 	type: "films" | "series" | "cartoons";
+	showType: "default" | "short";
 };
 
-const MoviesItem = ({ title, imgUrl, type, id }: MovieItemProps) => {
+const MoviesItem = ({ title, imgUrl, type, id, showType }: MovieItemProps) => {
+	console.log(type);
+
 	return (
 		<Grid item xs={12} sm={6} md={4} lg={3} xl={2.4}>
 			<Link to={createMovieLink(type, "fiction", id)}>
@@ -21,11 +24,13 @@ const MoviesItem = ({ title, imgUrl, type, id }: MovieItemProps) => {
 						<img src={imgUrl} alt={title} />
 					</div>
 					<h4>{title}</h4>
-					<StyledMoviesItemControl>
-						<p>2023, USA, Detective</p>
-						<p>Overall rating: 0/10</p>
-						<p>Admin rating: 0/10</p>
-					</StyledMoviesItemControl>
+					{showType === "default" && (
+						<StyledMoviesItemControl>
+							<p>2023, USA, Detective</p>
+							<p>Overall rating: 0/10</p>
+							<p>Admin rating: 0/10</p>
+						</StyledMoviesItemControl>
+					)}
 					<p className="type">{formatMovieType(type)}</p>
 				</Card>
 			</Link>

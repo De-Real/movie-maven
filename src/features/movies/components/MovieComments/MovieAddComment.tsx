@@ -21,6 +21,7 @@ const MovieAddComment = () => {
 			userName: body.anonymous ? "Anonymous" : "real", //Should be taken from global state
 			userRating: 4.5, //Should be taken from films details
 			date: new Date().toLocaleDateString(),
+			likes: 0,
 			answers: [],
 		};
 

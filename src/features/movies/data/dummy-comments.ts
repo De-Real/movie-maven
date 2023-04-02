@@ -6,6 +6,7 @@ export const DUMMY_COMMENTS = [
 		commentText: "It's quite nice detective! Waiting for the next season!",
 		userRating: 4.9,
 		date: new Date().toLocaleDateString(),
+		likes: 3,
 		answers: [
 			{
 				commentId: "1_1",
@@ -14,6 +15,7 @@ export const DUMMY_COMMENTS = [
 				commentText: "Yehh, I quite agree with this guy. Still waiting <3",
 				userRating: 5,
 				date: new Date().toLocaleDateString(),
+				likes: 2,
 			},
 			{
 				commentId: "1_2",
@@ -22,6 +24,7 @@ export const DUMMY_COMMENTS = [
 				commentText: "Ahahaha, you are kidding guys??!?",
 				userRating: 0.1,
 				date: new Date().toLocaleDateString(),
+				likes: 0,
 			},
 		],
 	},
@@ -32,6 +35,7 @@ export const DUMMY_COMMENTS = [
 		commentText: "AWFUL!!!!",
 		userRating: 1.0,
 		date: new Date().toLocaleDateString(),
+		likes: 1,
 		answers: [
 			{
 				commentId: "2_1",
@@ -40,6 +44,7 @@ export const DUMMY_COMMENTS = [
 				commentText: "EXACTLY",
 				userRating: 0.1,
 				date: new Date().toLocaleDateString(),
+				likes: 0,
 			},
 		],
 	},

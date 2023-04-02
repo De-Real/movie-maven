@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import {
 	MovieCommentButton,
 	MovieCommentControl,
@@ -16,11 +16,12 @@ import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
 import FadeTooltip from "../../../../components/ui/FadeTooltip";
 
 import { CommentBody } from "../../../../types/comments";
+import { useAppDispatch } from "../../../../store/hooks";
+import { manageCommentLike } from "../../../../store/comments-slice";
 
 type MovieCommentProps = {
 	comment: CommentBody;
 	answer?: boolean;
-	onResponseSubmit?: () => void;
 	onManageResponse?: () => void;
 };
 
@@ -29,12 +30,35 @@ const MovieComment = ({
 	answer = false,
 	onManageResponse,
 }: MovieCommentProps) => {
+	const dispatch = useAppDispatch();
+
 	const [liked, setLiked] = useState(false);
+	const [initial, setInitial] = useState(true);
 
 	const manageResponsingHandler = () => {
 		if (onManageResponse) {
 			onManageResponse();
 		}
+	};
+
+	useEffect(() => {
+		if (initial) {
+			setInitial(false);
+		} else {
+			dispatch(
+				manageCommentLike({
+					id: comment.commentId,
+					action: liked ? "increment" : "decrement",
+				})
+			);
+		}
+
+		//Need to fix later, ESLinter make us put initial as dependency
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [liked, comment.commentId, dispatch]);
+
+	const manageLikeHandler = () => {
+		setLiked((currentState) => !currentState);
 	};
 
 	return (
@@ -53,13 +77,9 @@ const MovieComment = ({
 				<MovieCommentText>{comment.commentText}</MovieCommentText>
 				<MovieCommentControl>
 					<FadeTooltip title="Agree with this comment">
-						<MovieCommentButton
-							onClick={() => {
-								setLiked((s) => !s);
-							}}
-						>
+						<MovieCommentButton onClick={manageLikeHandler}>
 							{liked ? <ThumbUpAltIcon /> : <ThumbUpOffAltIcon />}
-							<span> Agree (5)</span>
+							<span> Agree ({comment.likes})</span>
 						</MovieCommentButton>
 					</FadeTooltip>
 					{!answer && (
@@ -77,7 +97,6 @@ const MovieComment = ({
 					</MovieCommentReport>
 				</FadeTooltip>
 			</StyledMovieComment>
-			{/* {isResponsing && <CommentForm />} */}
 		</>
 	);
 };

@@ -1,7 +1,11 @@
 import React from "react";
 import { StyledCard } from "./styles/Card.styled";
 
-const Card = ({ children }: { children: React.ReactNode }) => {
+type CardProps = {
+	children: React.ReactNode;
+};
+
+const Card = ({ children }: CardProps) => {
 	return <StyledCard>{children}</StyledCard>;
 };
 

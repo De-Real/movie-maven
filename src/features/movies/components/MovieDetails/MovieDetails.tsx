@@ -12,6 +12,8 @@ import { DUMMY_COMMENTS } from "../../data/dummy-comments";
 import { useEffect } from "react";
 import { useAppDispatch } from "../../../../store/hooks";
 import { setComments } from "../../../../store/comments-slice";
+import { DUMMY_MOVIES } from "../../data/dummy-related.movies";
+import MoviesList from "../MoviesList";
 
 const MovieDetails = () => {
 	const dispatch = useAppDispatch();
@@ -49,6 +51,9 @@ const MovieDetails = () => {
 					excepturi, minus veniam blanditiis odio optio sapiente. Quia corporis
 					explicabo vitae ab minus eos, harum earum?
 				</p>
+				<div>
+					<MoviesList movies={DUMMY_MOVIES} type="short" />
+				</div>
 			</MovieDetailsBlock>
 			<MovieDetailsBlock>
 				<h4>Comments </h4>

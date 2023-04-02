@@ -5,6 +5,7 @@ export type CommentBody = {
 	commentText: string;
 	userRating: number;
 	date: string;
+	likes: number;
 };
 
 export type MainCommentBody = CommentBody & { answers: CommentBody[] };

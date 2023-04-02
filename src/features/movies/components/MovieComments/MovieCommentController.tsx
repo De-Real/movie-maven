@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import CommentForm from "../form/CommentForm";
 import MovieComment from "./MovieComment";
 import {
@@ -9,9 +9,7 @@ import { CommentResponseBody } from "../../types/comments";
 
 import { CommentBody, MainCommentBody } from "../../../../types/comments";
 import { useAppDispatch } from "../../../../store/hooks";
-import commentsSlice, {
-	addAnswerComment,
-} from "../../../../store/comments-slice";
+import { addAnswerComment } from "../../../../store/comments-slice";
 
 type MovieCommentProps = {
 	comment: MainCommentBody;
@@ -32,9 +30,8 @@ const MovieCommentController = ({ comment }: MovieCommentProps) => {
 			userName: body.anonymous ? "Anonymous" : "real", //Should be taken from global state
 			userRating: 4.5, //Should be taken from films details
 			date: new Date().toLocaleDateString(),
+			likes: 0,
 		};
-
-		console.log(commentAnswerBody);
 
 		dispatch(
 			addAnswerComment({ headId: comment.commentId, body: commentAnswerBody })

@@ -11,6 +11,8 @@
 # production
 /build
 
+toFix.txt
+
 # misc
 .DS_Store
 .env.local
