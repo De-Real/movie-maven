@@ -1,6 +1,7 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const StyledMovieComment = styled.div<{ isAnswer: boolean }>`
+export const StyledMovieComment = styled(motion.div)<{ isAnswer: boolean }>`
 	background-color: rgba(223, 226, 219, 0.2);
 	border: 1px solid rgba(223, 226, 219, 0.4);
 	border-radius: 5px;

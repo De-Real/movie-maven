@@ -15,6 +15,11 @@ type CommentFormProps = {
 	onSubmitResponse: (body: CommentResponseBody) => void;
 };
 
+const formVariants = {
+	hidden: { x: "100vw", opacity: 0 },
+	visible: { x: 0, opacity: 1, transition: { duration: 1, type: "spring" } },
+};
+
 const CommentForm = ({
 	answer = false,
 	onManageResponse,
@@ -69,7 +74,13 @@ const CommentForm = ({
 
 	return (
 		<>
-			<StyledCommentForm isAnswer={answer}>
+			<StyledCommentForm
+				variants={formVariants}
+				initial="hidden"
+				animate="visible"
+				exit="hidden"
+				isAnswer={answer}
+			>
 				<textarea value={textareaValue} onChange={changeTextareaValue} />
 				<p>Characters: {textareaValue.length}/300</p>
 				<div>

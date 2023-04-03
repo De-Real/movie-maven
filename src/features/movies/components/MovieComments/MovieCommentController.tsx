@@ -12,6 +12,7 @@ import { useAppDispatch } from "../../../../store/hooks";
 import { addAnswerComment } from "../../../../store/comments-slice";
 import Alert from "../../../../components/ui/Alert";
 import { formCommentAnswerBody } from "../../utils/formCommentAnswerBody";
+import { AnimatePresence } from "framer-motion";
 
 type MovieCommentProps = {
 	comment: MainCommentBody;
@@ -76,13 +77,15 @@ const MovieCommentController = ({ comment }: MovieCommentProps) => {
 					{answers.map((answer) => (
 						<MovieComment key={answer.commentId} comment={answer} answer />
 					))}
-					{isResponsing && (
-						<CommentForm
-							answer
-							onManageResponse={manageResponseHandler}
-							onSubmitResponse={submitResponseHandler}
-						/>
-					)}
+					<AnimatePresence mode="wait">
+						{isResponsing && (
+							<CommentForm
+								answer
+								onManageResponse={manageResponseHandler}
+								onSubmitResponse={submitResponseHandler}
+							/>
+						)}
+					</AnimatePresence>
 				</MovieCommentControllerAnswers>
 			</StyledMovieCommentController>
 		</>

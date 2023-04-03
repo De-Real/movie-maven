@@ -25,6 +25,11 @@ type MovieCommentProps = {
 	onManageResponse?: () => void;
 };
 
+const commentVariants = {
+	hidden: { x: "100vw", opacity: 0 },
+	visible: { x: 0, opacity: 1, transition: { duration: 1, type: "spring" } },
+};
+
 const MovieComment = ({
 	comment,
 	answer = false,
@@ -63,7 +68,12 @@ const MovieComment = ({
 
 	return (
 		<>
-			<StyledMovieComment isAnswer={answer}>
+			<StyledMovieComment
+				variants={commentVariants}
+				initial="hidden"
+				animate="visible"
+				isAnswer={answer}
+			>
 				<MovieCommentHeader>
 					<p>{comment.userName}</p>
 					<p>{comment.date}</p>

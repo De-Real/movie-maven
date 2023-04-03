@@ -1,6 +1,7 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const StyledCommentForm = styled.form<{ isAnswer: boolean }>`
+export const StyledCommentForm = styled(motion.form)<{ isAnswer: boolean }>`
 	padding: 10px 0 25px 0;
 	width: ${({ isAnswer }) => (isAnswer ? "100%" : "500px")};
 	font-weight: 500;

@@ -3,12 +3,23 @@ import {
 	StyledMovieLeftTopDetails,
 	StyledMovieRating,
 	StyledMovieRatingFeedback,
+	StyledMovieRatingValue,
 } from "./styles/MovieLeftTopDetails.styled";
 
 import Rating from "@mui/material/Rating";
 
 import RateReviewIcon from "@mui/icons-material/RateReview";
 import FadeTooltip from "../../../../components/ui/FadeTooltip";
+
+const animationVariants = {
+	hidden: { opacity: 0, x: 50, y: 20 },
+	visible: {
+		opacity: 1,
+		x: 0,
+		y: 0,
+		transition: { type: "spring", duration: 1 },
+	},
+};
 
 const MovieLeftTopDetails = () => {
 	const [value, setValue] = useState<number>(0);
@@ -37,11 +48,26 @@ const MovieLeftTopDetails = () => {
 							setValue(newValue || 0);
 						}}
 					/>
-					{value > 0 && <span className="value">{value.toFixed(1)}</span>}
+
+					{value > 0 && (
+						<StyledMovieRatingValue
+							variants={animationVariants}
+							initial="hidden"
+							animate="visible"
+						>
+							{value.toFixed(1)}
+						</StyledMovieRatingValue>
+					)}
 				</div>
-				<StyledMovieRatingFeedback>
-					{value ? "Thanks for you feedback!" : ""}
-				</StyledMovieRatingFeedback>
+				{value > 0 && (
+					<StyledMovieRatingFeedback
+						variants={animationVariants}
+						initial="hidden"
+						animate="visible"
+					>
+						Thanks for you feedback!
+					</StyledMovieRatingFeedback>
+				)}
 			</StyledMovieRating>
 		</StyledMovieLeftTopDetails>
 	);

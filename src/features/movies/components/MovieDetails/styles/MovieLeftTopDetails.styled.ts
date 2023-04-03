@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const StyledMovieLeftTopDetails = styled.div`
@@ -27,13 +28,13 @@ export const StyledMovieRating = styled.div`
 		align-items: center;
 		font-weight: 600;
 	}
-
-	& span.value {
-		font-size: 18px;
-	}
 `;
 
-export const StyledMovieRatingFeedback = styled.p`
+export const StyledMovieRatingValue = styled(motion.span)`
+	font-size: 18px;
+`;
+
+export const StyledMovieRatingFeedback = styled(motion.p)`
 	height: 20px;
 	color: #a50113;
 `;
