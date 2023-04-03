@@ -1,5 +1,4 @@
 export type CommentResponseBody = {
-	commentText: string;
+	text: string;
 	anonymous: boolean;
 };
-

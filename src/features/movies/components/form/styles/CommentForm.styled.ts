@@ -12,9 +12,14 @@ export const StyledCommentForm = styled.form<{ isAnswer: boolean }>`
 		width: 100%;
 		min-height: ${({ isAnswer }) => (isAnswer ? "85px" : "130px;")};
 		padding: 5px;
-		border: 1px solid black;
+		border: 1px solid #211d21;
 		border-radius: 5px;
 		margin-bottom: 5px;
+		transition: all 1s ease 0;
+
+		&:focus {
+			box-shadow: 0 0 5px rgba(33, 29, 33, 0.3);
+		}
 	}
 
 	& p {

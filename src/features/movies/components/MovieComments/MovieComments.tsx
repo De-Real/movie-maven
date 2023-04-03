@@ -1,10 +1,7 @@
-import React from "react";
 import MovieCommentController from "./MovieCommentController";
 import { StyledMovieComments } from "./styles/MovieComments.styled";
 import {useAppSelector } from "../../../../store/hooks";
 import { selectComments } from "../../../../store/comments-slice";
-
-
 
 const MovieComments = () => {
 	//Here we can copy comments to global state
