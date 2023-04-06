@@ -3,6 +3,7 @@ import MovieRatings from "./MovieRatings";
 import { MovieDetail } from "./styles/MovieRightTopDetails.styled";
 
 const MovieRightTopDetails = () => {
+	//Винести більшість данних в об'єкти
 	return (
 		<div>
 			<MovieRatings />

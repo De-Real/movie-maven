@@ -5,8 +5,8 @@ import {
 
 import MovieLeftTopDetails from "./MovieLeftTopDetails";
 import MovieRightTopDetails from "./MovieRightTopDetails";
-import MovieComments from "../MovieComments/MovieComments";
-import MovieAddComment from "../MovieComments/MovieAddComment";
+import MovieComments from "../MovieComments/Comments";
+import MovieAddComment from "../MovieComments/NewComment";
 
 import { DUMMY_COMMENTS } from "../../data/dummy-comments";
 import { useEffect } from "react";

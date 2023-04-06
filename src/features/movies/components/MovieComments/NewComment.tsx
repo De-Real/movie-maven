@@ -1,33 +1,18 @@
 import CommentForm from "../form/CommentForm";
-import {
-	StyledMovieAddComment,
-	StyledNotation,
-} from "./styles/MovieAddComment.styled";
+import { StyledNewComment, StyledNotation } from "./styles/NewComment.styled";
 
 import { CommentResponseBody } from "../../types/comments";
 import { useAppDispatch } from "../../../../store/hooks";
 import { MainCommentBody } from "../../../../types/comments";
 import { addMainComment } from "../../../../store/comments-slice";
 import { formCommentAnswerBody } from "../../utils/formCommentAnswerBody";
-import { useState } from "react";
 import Alert from "../../../../components/ui/Alert";
+import useOpenAlert from "../../hooks/useOpenAlert";
 
-const MovieAddComment = () => {
-	const [openSuccess, setOpenSuccess] = useState(false);
+const NewComment = () => {
+	//Hook to manage alert
+	const { isAlertOpen, handleAlertClose, handleAlertOpen } = useOpenAlert();
 	const dispatch = useAppDispatch();
-
-	const handleAlertOpen = () => {
-		setOpenSuccess(true);
-	};
-
-	const handleAlertClose = (
-		_event?: React.SyntheticEvent | Event,
-		reason?: string
-	) => {
-		if (reason !== "clickaway") {
-			setOpenSuccess(false);
-		}
-	};
 
 	const addComment = (body: CommentResponseBody) => {
 		handleAlertOpen();
@@ -48,18 +33,18 @@ const MovieAddComment = () => {
 			<Alert
 				title="Your comment was added!"
 				handleClose={handleAlertClose}
-				open={openSuccess}
+				open={isAlertOpen}
 			/>
-			<StyledMovieAddComment>
+			<StyledNewComment>
 				<h5>Leave review comment to this movie.</h5>
 				<StyledNotation>
 					NOTE: Comments with spoilers, offensive language and non-related
 					themes will be deleted.
 				</StyledNotation>
 				<CommentForm onSubmitResponse={addComment} />
-			</StyledMovieAddComment>
+			</StyledNewComment>
 		</>
 	);
 };
 
-export default MovieAddComment;
+export default NewComment;

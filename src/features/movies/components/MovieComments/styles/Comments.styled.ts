@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledMovieComments = styled.div`
+export const StyledComments = styled.div`
 	& ul {
 		display: flex;
 		flex-direction: column;

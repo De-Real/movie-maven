@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import { AuthController } from "../features/authentication";
 
 const Auth = () => {
-  return (
-	 <div>Auth</div>
-  )
-}
+	return <AuthController />;
+};
 
-export default Auth
+export default Auth;

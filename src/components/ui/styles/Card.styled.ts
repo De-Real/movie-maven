@@ -1,6 +1,7 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const StyledCard = styled.li`
+export const StyledCard = styled(motion.li)`
 	overflow: hidden;
 	border: 1px solid #010a10;
 	box-shadow: 2px 2px 5px #ccc;

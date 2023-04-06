@@ -1,15 +1,12 @@
-import MenuItem from "@mui/material/MenuItem";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
-import InputLabel from "@mui/material/InputLabel";
-import FormControl from "@mui/material/FormControl";
-import { useState } from "react";
+import React, { useState } from "react";
 import { StyledSortSelection } from "./styles/SortSelections.styled";
 
 const SortSelection = () => {
 	const [age, setAge] = useState("");
 
-	const handleChange = (event: SelectChangeEvent) => {
-		setAge(event.target.value as string);
+	const handleChange = (event: React.FormEvent<HTMLSelectElement>) => {
+		setAge(event?.currentTarget.value as string);
+		console.log(event.currentTarget.value);
 	};
 
 	return (
@@ -18,7 +15,7 @@ const SortSelection = () => {
 				<p>Sort by: </p>
 
 				<div>
-					<select>
+					<select onChange={handleChange} value={age}>
 						<option value="preferences">Preferences</option>
 						<option value="release-date">Release date</option>
 						<option value="rating">Rating</option>

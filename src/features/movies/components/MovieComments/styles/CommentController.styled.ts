@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export const StyledMovieCommentController = styled.li``;
+export const StyledCommentController = styled.li``;
 
-export const MovieCommentControllerAnswers = styled.div`
+export const CommentControllerAnswers = styled.div`
 	padding-top: 10px;
 	padding-left: 50px;
 	display: flex;

@@ -5,8 +5,24 @@ type CardProps = {
 	children: React.ReactNode;
 };
 
+const cardVariants = {
+	hover: {
+		scale: 1.03,
+		transition: {
+			type: "spring",
+			duration: 0.5,
+			repeat: Infinity,
+			repeatType: "reverse" as const,
+		},
+	},
+};
+
 const Card = ({ children }: CardProps) => {
-	return <StyledCard>{children}</StyledCard>;
+	return (
+		<StyledCard variants={cardVariants} whileHover="hover">
+			{children}
+		</StyledCard>
+	);
 };
 
 export default Card;

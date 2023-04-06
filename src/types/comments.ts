@@ -8,4 +8,5 @@ export type CommentBody = {
 	likes: number;
 };
 
+//Add ts utility here
 export type MainCommentBody = CommentBody & { answers: CommentBody[] };

@@ -1,6 +1,5 @@
 import React from "react";
 import { StyledMoviesSort } from "./styles/MoviesSort.styled";
-import filmsGenres from "../data/films-genres.json";
 import { NavLink } from "react-router-dom";
 import { switchGenres } from "../utils/switchGenres";
 import SortSelection from "../../../components/form/SortSelection";
