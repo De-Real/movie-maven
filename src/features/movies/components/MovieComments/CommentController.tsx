@@ -15,11 +15,11 @@ import { AnimatePresence } from "framer-motion";
 import useOpenAlert from "../../hooks/useOpenAlert";
 import useCommentResponding from "../../hooks/useCommentResponding";
 
-type CommentProps = {
+type CommentControllerProps = {
 	comment: MainCommentBody;
 };
 
-const CommentController = ({ comment }: CommentProps) => {
+const CommentController = ({ comment }: CommentControllerProps) => {
 	const { answers } = comment;
 
 	const { isResponsing, manageResponseHandler } = useCommentResponding();

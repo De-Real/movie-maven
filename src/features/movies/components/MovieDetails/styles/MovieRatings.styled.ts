@@ -12,9 +12,3 @@ export const StyledMovieRatings = styled.div`
 
 	margin-bottom: 15px;
 `;
-
-export const StyledMovieRatingItem = styled.div`
-	display: flex;
-	align-items: center;
-	gap: 5px;
-`;

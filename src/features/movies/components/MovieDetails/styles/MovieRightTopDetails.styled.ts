@@ -3,8 +3,9 @@ import styled from "styled-components";
 export const MovieDetail = styled.p`
 	padding: 5px 0;
 
-	& :first-child {
+	& span:first-child {
 		font-weight: 600;
+		padding-right: 7px;
 	}
 
 	& a {
